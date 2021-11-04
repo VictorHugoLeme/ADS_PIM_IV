@@ -192,8 +192,8 @@ int main()
             for(i = 0; i < qt; i++)
             {
             fprintf(arq, "%s", lista[i].nome);
-            fprintf(arq, "%d", lista[i].idade);
-            fprintf(arq, "%d", lista[i].cep);
+            fprintf(arq, "%d\n", lista[i].idade);
+            fprintf(arq, "%d\n", lista[i].cep);
             }
             fclose(arq);
         }
