@@ -193,7 +193,7 @@ int main()
             {
             fprintf(arq, "%s", lista[i].nome);
             fprintf(arq, "%d\n", lista[i].idade);
-            fprintf(arq, "%s\n", lista[i].cep);
+            fprintf(arq, "%s\n\n", lista[i].cep);
             }
             fclose(arq);
         }
