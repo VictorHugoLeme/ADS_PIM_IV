@@ -6,10 +6,10 @@
 typedef struct
 {
     char nome[50];
-    int idade[50];
+    char idade[50];
     int cpf[50];
     char telefone[50]; 
-    int cep[50];
+    char cep[50];
     char endereco[150];
     char data_nascimento[50];
     char email[50];
@@ -120,7 +120,7 @@ int main()
 
             fflush(stdin);
             printf("\t\tDigite a Idade do Paciente: \n");
-            scanf("%d", &p.idade);
+            fgets(p.idade, 50, stdin);
 
             fflush(stdin);
             printf("\t\tDigite o CPF do Paciente: \n");
@@ -132,7 +132,7 @@ int main()
 
             fflush(stdin);
             printf("\t\tDigite o CEP: \n");
-            scanf("%d", &p.cep);
+            fgets(p.cep, 50, stdin);
 
             fflush(stdin);
             printf("\t\tDigite o Endereco completo(Rua, Numero, bairro, Cidade e Estado): \n");
