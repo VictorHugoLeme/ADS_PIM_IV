@@ -7,7 +7,7 @@ typedef struct
 {
     char nome[50];
     int idade[50];
-    int cpf[50];
+    char cpf[50];
     char telefone[50]; 
     char cep[50];
     char endereco[150];
