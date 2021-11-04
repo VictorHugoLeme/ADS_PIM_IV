@@ -191,7 +191,7 @@ int main()
         {
             for(i = 0; i < qt; i++)
             {
-            fprintf(arq, "Nome: %s", lista[i].nome);
+            fprintf(arq, "Nome: %s\n", lista[i].nome);
             fprintf(arq, "Idade: %d\n", lista[i].idade);
             fprintf(arq, "CEP: %s\n", lista[i].cep);
             fprintf(arq, "CPF: %s\n", lista[i].cpf);
@@ -200,7 +200,7 @@ int main()
             fprintf(arq, "Data de Nascimento: %s\n", lista[i].data_nascimento);
             fprintf(arq, "Email: %s\n", lista[i].email);
             fprintf(arq, "Patologias: %s\n", lista[i].comor);
-            fprintf(arq, "Data do Diagnostico%s\n\n", lista[i].data_diag);
+            fprintf(arq, "Data do Diagnostico: %s\n\n", lista[i].data_diag);
 
             }
             fclose(arq);
