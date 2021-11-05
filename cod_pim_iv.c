@@ -84,11 +84,11 @@ void login(){
 			char password[12]; 
 			
 		while (1) {
-			printf("Nome de usuário:\n"); 
+			printf("Nome de usuario:\n"); 
 			scanf("%s",&username);
 
 			if(strcmp(username,"medico")!=0){
-				printf("Nome de usuário inválido.Por favor, tente novamente:\n");
+				printf("Nome de usuario invalido.Por favor, tente novamente:\n");
 				continue;
 			}
 			else{
@@ -101,7 +101,7 @@ void login(){
             scanf("%s",&password); 
 
             if(strcmp(password,"1111")!=0){ 
-				printf("Senha inválida.Por favor, tente novamente:\n");
+				printf("Senha invalida.Por favor, tente novamente:\n");
 
 				continue;
 			}
@@ -153,7 +153,7 @@ void login(){
             printf("\t\tDigite o Email do Pacinte: \n");
             fgets(p.email, 50, stdin);
 
-            printf("\t\tEscreva Patologias do Paciente(diabetes, obesidade, hipertensão, tuberculose, outros): \n");
+            printf("\t\tEscreva Patologias do Paciente(diabetes, obesidade, hipertensao, tuberculose, outros): \n");
             fgets(p.comor, 200, stdin);
 
             printf("\t\tDigite a data do Diagnostico: \n");
