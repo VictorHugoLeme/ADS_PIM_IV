@@ -83,33 +83,33 @@ void login(){
 			char username[15]; 
 			char password[12]; 
 			
-			while (1) {
-				printf("Nome de usuário:\n"); 
-				scanf("%s",&username);
+		while (1) {
+			printf("Nome de usuário:\n"); 
+			scanf("%s",&username);
 
-				if(strcmp(username,"medico")!=0){
-					printf("Nome de usuário inválido.Por favor, tente novamente:\n");
-					continue;
-				}
-				else{
-					break;
+			if(strcmp(username,"medico")!=0){
+				printf("Nome de usuário inválido.Por favor, tente novamente:\n");
+				continue;
+			}
+			else{
+				break;
 				}
 			}
     
 		while (1) {
 			printf("Entre sua senha:\n"); 
-      scanf("%s",&password); 
+            scanf("%s",&password); 
 
-      if(strcmp(password,"1111")!=0){ 
+            if(strcmp(password,"1111")!=0){ 
 				printf("Senha inválida.Por favor, tente novamente:\n");
 
-					continue;
+				continue;
 			}
 			else{
 				printf("\nWelcome.Login Success!");
 				break;
 			}
-    }
+        }
 		return;
 	}
 
