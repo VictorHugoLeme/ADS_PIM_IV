@@ -1,0 +1,6 @@
+Nome: vinicius
+
+Idade: 31
+
+CEP: 16052900
+
