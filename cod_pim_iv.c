@@ -66,7 +66,7 @@ int main()
                 {
                     printf("\n2 - Salvar em Arquivos Comuns\n");
                     printf("1 - Salvar em grupo de risco\n");
-                    printf("0 - Sair\n");
+                    printf("0 - Voltar ao Menu\n");
                     scanf("%d", &op2);
 
 
