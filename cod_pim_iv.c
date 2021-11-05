@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h> 
 
 //structs
 
 typedef struct
 {
     char nome[50];
-    int idade[50];
+    char idade[50];
     char cpf[50];
     char telefone[50]; 
     char cep[50];
@@ -20,6 +21,7 @@ typedef struct
 paciente lista[10];
 int tam = 10;
 int qt = 0;
+int risco = 65;
 
 
 
@@ -28,6 +30,7 @@ void login();
 int cadastro();
 void imprimir();
 void salvarArquivo();
+void salvarArquivogrisco();
 
 
 
@@ -35,16 +38,17 @@ void salvarArquivo();
 //main
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
     
     login();
 
-
+    int op2;
     int op;
 
     do
     {
         printf("\n\n\n3 - Cadastrar\n");
-        printf("2 - Salvar em Arquivo\n");
+        printf("2 - Salvar em Arquivos\n");
         printf("1 - Imprimir\n");
         printf("0 - Sair\n");
         scanf("%d", &op);
@@ -58,13 +62,35 @@ int main()
             imprimir();
             break;
         case 2:
-            salvarArquivo();
+                do
+                {
+                    printf("\n2 - Salvar em Arquivos Comuns\n");
+                    printf("1 - Salvar em grupo de risco\n");
+                    printf("0 - Sair\n");
+                    scanf("%d", &op2);
+
+
+                    switch (op2)
+                    {
+                    case 1:
+                        salvarArquivogrisco();
+                        break;
+                    case 2:
+                        salvarArquivo();
+                        break;
+                    case 0:
+                        printf("Programa encerrado");
+                        break;
+                    default:
+                        printf("Opcao Invalida");
+                        break;
+                    }
+                } while (op2 != 0);
+           
             break;
         case 3:
             cadastro();
             break;
-
-
         
         default:
             printf("Opcao Invalida");
@@ -76,6 +102,8 @@ int main()
     
     return 0;
 }
+
+
 
     //funcoes
     void login()
@@ -120,7 +148,7 @@ int main()
 
             fflush(stdin);
             printf("\t\tDigite a Idade do Paciente: \n");
-            scanf("%d", p.idade);
+            fgets(p.idade, 50, stdin);
 
             fflush(stdin);
             printf("\t\tDigite o CPF do Paciente: \n");
@@ -151,7 +179,7 @@ int main()
             printf("\t\tDigite a data do Diagnostico: \n");
             fgets(p.data_diag, 30, stdin);
 
-            
+            printf("\t\t\n\nSe o paciente está a cima dos 65 anos. vá em Salvar em Arquivos");
 
 
             lista[qt] = p;
@@ -168,17 +196,43 @@ int main()
 
     }
 
+
+
+
+
     void imprimir()
     {
         
         int i;
         for(i = 0; i < qt; i++)
         {
-        printf("Nome: %s", lista[i].nome);
-        printf("Idade: %d\n", lista[i].idade);
+        printf("\nNome: %s", lista[i].nome);
+        printf("Idade: %s\n", lista[i].idade);
         printf("CEP: %s\n", lista[i].cep);
         }
 
+    }
+
+    void salvarArquivogrisco()
+    {
+        FILE *arq2 = fopen("pacienterisco.txt", "w");
+        int i;
+        if(arq2)
+        {
+            for(i = 0; i < qt; i++)
+            {
+                fprintf(arq2, "Nome: %s\n", lista[i].nome);
+                fprintf(arq2, "Idade: %s\n", lista[i].idade);
+                fprintf(arq2, "CEP: %s\n", lista[i].cep);
+
+            }
+            fclose(arq2);
+            printf("\t\t\n!!!!********Arquivo salvo********!!!!");
+
+            
+        }
+        else
+        printf("error.");
     }
 
 
@@ -192,7 +246,7 @@ int main()
             for(i = 0; i < qt; i++)
             {
             fprintf(arq, "Nome: %s\n", lista[i].nome);
-            fprintf(arq, "Idade: %d\n", lista[i].idade);
+            fprintf(arq, "Idade: %s\n", lista[i].idade);
             fprintf(arq, "CEP: %s\n", lista[i].cep);
             fprintf(arq, "CPF: %s\n", lista[i].cpf);
             fprintf(arq, "Telefone: %s\n", lista[i].telefone);
@@ -204,6 +258,9 @@ int main()
 
             }
             fclose(arq);
+            printf("\t\t\n\n!!!!********Arquivo salvo********!!!!\n");
+
+            
         }
         else
         printf("error.");
