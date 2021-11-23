@@ -197,9 +197,6 @@ int main()
     }
 
 
-
-
-
     void imprimir()
     {
         
@@ -263,5 +260,5 @@ int main()
             
         }
         else
-        printf("error.");
+        printf("Error.");
     }
